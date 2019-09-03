@@ -1,9 +1,14 @@
 package com.example.myfirstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +17,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("CycleMethod","OnCreate Method is Running");
+
+        Button btnMenu=findViewById(R.id.btnDrawer);
+        final DrawerLayout myDrawer=findViewById(R.id.drawerMenu);
+
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDrawer.openDrawer(GravityCompat.START);
+
+
+            }
+        });
+
     }
 
     @Override
