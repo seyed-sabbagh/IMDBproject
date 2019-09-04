@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical"
     android:background="#1700BCD4"
     >
     <LinearLayout
@@ -36,19 +35,18 @@
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:background="#FFF"
-        android:layout_gravity="left">
+        android:layout_gravity="left"
+        android:orientation="vertical">
         
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Drawer Menue"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="#06065E"
-            android:fontFamily="serif"
-            android:textStyle="bold"
 
-            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_gravity="center"
+            android:background="#BBBBB0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 

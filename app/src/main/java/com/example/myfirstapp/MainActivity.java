@@ -3,12 +3,17 @@ package com.example.myfirstapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        RecyclerView recycler=findViewById(R.id.recycler);
+        ArrayList menuList=new ArrayList<String>();
+        menuList.add("Dial");
+        menuList.add("Profile");
+
+        myOnClickListener l=new myOnClickListener();
+
+        myAdapter adpter=new myAdapter(menuList, l);
+        recycler.setAdapter(adpter);
+        recycler.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.VERTICAL,false));
+
 
     }
 
@@ -72,4 +89,19 @@ public class MainActivity extends AppCompatActivity {
         Log.d("CycleMethod","OnRestart Method is Running");
 
     }
+
+    class myOnClickListener implements myAdapter.OnItemClickListener{
+        public void onItemClick(String itemTitle)
+        {
+            if (itemTitle=="Dial"){
+                Log.d("adapter","item is Dial0");
+                Intent i=new Intent(MainActivity.this,DialActivityHw4.class);
+                startActivity(i);
+            }
+
+        }
+
+    }
+
+
 }
