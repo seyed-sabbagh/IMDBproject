@@ -1,5 +1,6 @@
 package com.example.myfirstapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,10 +21,12 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
 
     ArrayList<String> menuLst;
     OnItemClickListener listener;
+
     myAdapter(ArrayList<String> lst, OnItemClickListener lsn){
 
         menuLst=lst;
         listener=lsn;
+
 
     }
 
@@ -46,6 +49,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
         {
             holder.myBtn.setText("Dial");
             //Log.d("adapter","position is "+ position);
+
             holder.bind("Dial",listener);}
 
         else
@@ -73,6 +77,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
             super(itemView);
             myBtn = itemView.findViewById(R.id.btnMenuItem);
         }
+
 
         public void bind(final String itemTitle,final OnItemClickListener listener) {
             itemView.setOnClickListener(new View.OnClickListener() {
