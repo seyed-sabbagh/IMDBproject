@@ -40,10 +40,13 @@ public class MainActivity extends AppCompatActivity {
         menuList.add("Dial");
         menuList.add("Profile");
 
-        myOnClickListener l=new myOnClickListener();
 
-        myAdapter adpter=new myAdapter(menuList, l);
-        recycler.setAdapter(adpter);
+
+
+        myAdapter adapter=new myAdapter(menuList);
+
+        recycler.setAdapter(adapter);
+
         recycler.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.VERTICAL,false));
 
 
@@ -90,19 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    class myOnClickListener implements myAdapter.OnItemClickListener{
-        public void onItemClick(String itemTitle)
-        {
-            Log.d("DrawerMenu","Item title is "+itemTitle);
-            if (itemTitle=="Dial"){
-                Log.d("adapter","item is Dial0");
-                Intent i=new Intent(MainActivity.this,DialActivityHw4.class);
-                startActivity(i);
-            }
 
-        }
-
-    }
 
 
 }

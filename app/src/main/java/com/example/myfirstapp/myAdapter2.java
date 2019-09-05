@@ -13,13 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
+public class myAdapter2 extends RecyclerView.Adapter<myAdapter2.myHolder> {
 
+    public interface OnItemClickListener {
+        void onItemClick(String itemTitle);
+    }
 
     ArrayList<String> menuLst;
     //OnItemClickListener listener;
 
-    myAdapter(ArrayList<String> lst){
+    myAdapter2(ArrayList<String> lst){
 
         menuLst=lst;
     }
@@ -46,6 +49,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
         {
             holder.myBtn.setText("Dial");
             //Log.d("adapter","position is "+ position);
+            holder.setAdapterPostion(position);
             c = DialActivityHw4.class;
         }
 
@@ -54,6 +58,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
         {
             holder.myBtn.setText("Profile");
             Log.d("adapter","position is "+ position);
+            holder.setAdapterPostion(position);
             c = ProfileActivityHw4.class;
         }
         final Button b=holder.myBtn;
@@ -77,16 +82,50 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
         return listSize;
     }
 
-    class myHolder extends RecyclerView.ViewHolder{
+    class myHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         Button myBtn;
+        private final Context context;
+        private int adapterPostion;
 
         public myHolder(@NonNull View itemView) {
             super(itemView);
             myBtn = itemView.findViewById(R.id.btnMenuItem);
             itemView.setClickable(true);
+            itemView.setOnClickListener(this);
+            context=itemView.getContext();
+
+
         }
 
+        @Override
+        public void onClick(View v) {
 
+            Log.d("adapter","LonClick event ");
+
+
+            final Intent intent;
+            switch (getAdapterPostion()){
+                case 0:
+                    intent =  new Intent(context, DialActivityHw4.class);
+                    break;
+
+                case 1:
+                    intent =  new Intent(context, ProfileActivityHw4.class);
+                    break;
+                default:
+                    intent =  new Intent(context, MainActivity.class);
+                    break;
+            }
+            context.startActivity(intent);
+        }
+
+        public int getAdapterPostion() {
+            return adapterPostion;
+        }
+
+        public void setAdapterPostion(int adapterPostion) {
+            this.adapterPostion = adapterPostion;
+        }
     }
 
     }
