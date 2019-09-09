@@ -36,37 +36,32 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
     @Override
     public void onBindViewHolder(@NonNull myHolder holder, int position) {
         String name= menuLst.get(position);
-        final Class c;
-       // holder.myBtn.setText(name);
-        Log.d("adapter","item is "+ name);
+        holder.myBtn.setText(name);
 
+        final Button myBtn=holder.myBtn;
+        final int p=position;
 
+        myBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch (p){
+                        case 0:
+                            Intent i1 = new Intent(myBtn.getContext(),DialActivityHw4.class);
+                            myBtn.getContext().startActivity(i1);
+                            break;
+                        case 1:
+                            Intent i2 = new Intent(myBtn.getContext(),ProfileActivityHw4.class);
+                            myBtn.getContext().startActivity(i2);
+                            break;
+                        case 2:
+                            Intent i3 = new Intent(myBtn.getContext(),IMDBSearchActivity.class);
+                            myBtn.getContext().startActivity(i3);
+                            break;
 
-        if (position==0)
-        {
-            holder.myBtn.setText("Dial");
-            //Log.d("adapter","position is "+ position);
-            c = DialActivityHw4.class;
-        }
+                    }
 
-
-        else
-        {
-            holder.myBtn.setText("Profile");
-            Log.d("adapter","position is "+ position);
-            c = ProfileActivityHw4.class;
-        }
-        final Button b=holder.myBtn;
-
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("adapter","onClick ");
-                Intent intent = new Intent(b.getContext(),c);
-                b.getContext().startActivity(intent);
-            }
-        });
-
+                }
+            });
 
     }
 
@@ -80,11 +75,37 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myHolder> {
     class myHolder extends RecyclerView.ViewHolder{
         Button myBtn;
 
-        public myHolder(@NonNull View itemView) {
+
+        public myHolder(@NonNull final View itemView) {
             super(itemView);
             myBtn = itemView.findViewById(R.id.btnMenuItem);
-            itemView.setClickable(true);
+            final int position= getAdapterPosition();
+
+           /*myBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch (position){
+                        case 0:
+                            Intent i1 = new Intent(myBtn.getContext(),DialActivityHw4.class);
+                            myBtn.getContext().startActivity(i1);
+                            break;
+                        case 1:
+                            Intent i2 = new Intent(myBtn.getContext(),ProfileActivityHw4.class);
+                            myBtn.getContext().startActivity(i2);
+                            break;
+                        case 2:
+                            Intent i3 = new Intent(myBtn.getContext(),IMDBSearchActivity.class);
+                            myBtn.getContext().startActivity(i3);
+                            break;
+
+                    }
+
+                }
+            });*/
+
         }
+
+
 
 
     }

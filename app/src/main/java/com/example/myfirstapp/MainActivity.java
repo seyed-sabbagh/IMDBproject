@@ -36,11 +36,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         RecyclerView recycler=findViewById(R.id.recycler);
-        ArrayList menuList=new ArrayList<String>();
+        ArrayList<String> menuList=new ArrayList<String>();
         menuList.add("Dial");
         menuList.add("Profile");
-
-
+        menuList.add("IMDB Search");
 
 
         myAdapter adapter=new myAdapter(menuList);
