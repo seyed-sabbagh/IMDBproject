@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".DialActivityHw4"
+    android:orientation="vertical"
     android:background="#1700BCD4"
+    android:gravity="center_horizontal"
     >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:src="@drawable/movie"
-            android:layout_width="250dp"
-            android:layout_height="150dp"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        >
 
         <EditText
             android:id="@+id/edtMovieName"
@@ -38,10 +42,9 @@
 
         <Button
             android:id="@+id/btnImdbSearch"
-            android:layout_width="180dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
             android:background="#E6009688"
             android:textColor="#FFF"
             android:text="Search"
@@ -52,25 +55,17 @@
 
             />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:background="#FFF"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ImdbRecycler"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_gravity="left"
-        android:orientation="vertical">
+        android:background="#1700BCD4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_gravity="center"
-            android:background="#1700BCD4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>
