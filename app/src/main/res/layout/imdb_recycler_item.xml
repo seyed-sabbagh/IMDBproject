@@ -3,22 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="110dp"
     tools:context=".MainActivity"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     >
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgImdbItemPoster"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_vertical"
+        />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center_vertical"
+        android:background="#B5C7DADC"
+        >
     <TextView
         android:id="@+id/txtImdbItemTitle"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:inputType="text"
         android:textSize="15sp"
         android:fontFamily="cursive"
         android:textStyle="bold"
         android:textColor="#0E0000"
+
         />
 
+    <TextView
+        android:id="@+id/txtImdbItemYear"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="12sp"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textColor="#0E0000"
+        />
+    </LinearLayout>
 
 
 </LinearLayout>
