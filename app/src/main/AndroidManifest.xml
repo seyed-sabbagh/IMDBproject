@@ -21,7 +21,6 @@
         <activity android:name=".ProfilePreviewHw4" />
         <activity android:name=".ProfileActivityHw4"></activity>
         <activity android:name=".DialActivityHw4"></activity>
-        <activity android:name=".LayoutDesignHw2" />
         <activity android:name=".MainActivity">
 
         </activity>

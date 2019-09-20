@@ -9,13 +9,6 @@
     android:background="#1700BCD4"
     android:gravity="center"
     >
-    <androidx.appcompat.widget.AppCompatImageView
-        android:src="@drawable/phone"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:scaleType="fitCenter"
-        android:layout_marginBottom="80dp"
-        />
 
 
     <EditText
@@ -24,13 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:hint="Please enter phone number"
-        android:background="@android:color/transparent"
-        android:inputType="phone"
         android:textSize="20sp"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
-        android:maxLength="11"
-        android:gravity="center"
         />
     <Button
         android:id="@+id/btnDial"
@@ -38,10 +25,6 @@
         android:layout_height="wrap_content"
         android:text="Dial"
         android:gravity="center"
-        android:textSize="20sp"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
-        android:background="#E6009688"
-        android:textColor="#FFF"/>
+        android:textSize="20sp" />
 
 </LinearLayout>

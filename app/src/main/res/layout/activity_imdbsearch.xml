@@ -6,17 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".DialActivityHw4"
     android:orientation="vertical"
-    android:background="#1700BCD4"
     android:gravity="center_horizontal"
     >
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:src="@drawable/movie"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:layout_marginBottom="15dp"
-            />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,26 +23,19 @@
             android:id="@+id/edtMovieName"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="#4300BCD4"
-            android:hint="Find Movies"
-            android:inputType="text"
-            android:textSize="20sp"
-            android:fontFamily="cursive"
-            android:textStyle="bold"
+            android:hint="Enter name video"
+            android:textSize="25sp"
+
             />
 
         <Button
             android:id="@+id/btnImdbSearch"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="5dp"
-            android:background="#E6009688"
-            android:textColor="#FFF"
             android:text="Search"
             android:gravity="center"
             android:textSize="20sp"
-            android:fontFamily="cursive"
-            android:textStyle="bold"
 
             />
     </LinearLayout>
@@ -60,7 +44,6 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_gravity="left"
-        android:background="#8307515A"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
